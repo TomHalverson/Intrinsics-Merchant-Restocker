@@ -1,0 +1,29 @@
+<div class="form-group">
+    <label for="restocker-theme">{{localize "INTRINSICS_RESTOCKER.Config.theme"}}</label>
+    <div class="form-fields">
+        <select id="restocker-theme" name="theme">
+            <option value="" {{#unless currentTheme}}selected{{/unless}}>
+                {{localize "INTRINSICS_RESTOCKER.Config.selectTheme"}}
+            </option>
+            {{#each themes}}
+                <option value="{{this.id}}" {{#if this.selected}}selected{{/if}}>
+                    {{this.label}}{{#if this.isEquipmentVendor}} ★{{/if}}
+                </option>
+            {{/each}}
+        </select>
+    </div>
+    <p class="hint">
+        {{localize "INTRINSICS_RESTOCKER.Config.themeHint"}}
+        <br>
+        <small>★ {{localize "INTRINSICS_RESTOCKER.Config.equipmentVendor"}}</small>
+    </p>
+</div>
+
+<div class="form-group">
+    <label for="restocker-budget">{{localize "INTRINSICS_RESTOCKER.Config.budget"}}</label>
+    <div class="form-fields">
+        <input type="number" id="restocker-budget" name="budget"
+               value="{{currentBudget}}" min="1" step="1" required>
+    </div>
+    <p class="hint">{{localize "INTRINSICS_RESTOCKER.Config.budgetHint"}}</p>
+</div>

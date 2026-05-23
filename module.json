@@ -1,0 +1,46 @@
+{
+  "id": "intrinsics-merchant-restocker",
+  "title": "Intrinsic's Merchant Restocker",
+  "description": "Re-rolls PF2E/SF2E merchant (Loot actor) inventories using themed item pools and a per-merchant point budget. Equipment vendors are guaranteed at least one uncommon item with a 25% chance of a rare.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {}
+      },
+      {
+        "id": "sf2e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/module.js"
+  ],
+  "styles": [
+    "styles/merchant-restocker.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": false,
+  "authors": [
+    {
+      "name": "Intrinsic"
+    }
+  ],
+  "url": "https://github.com/TomHalverson/intrinsics-merchant-restocker",
+  "manifest": "https://raw.githubusercontent.com/TomHalverson/intrinsics-merchant-restocker/refs/heads/main/module.json",
+  "download": "https://github.com/TomHalverson/intrinsics-merchant-restocker/archive/refs/heads/main.zip"
+}

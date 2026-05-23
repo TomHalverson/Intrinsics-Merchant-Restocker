@@ -1,0 +1,34 @@
+{
+  "INTRINSICS_RESTOCKER": {
+    "Theme": {
+      "food": "Food & Provisions",
+      "weapons": "Weapons",
+      "armor": "Armor & Shields",
+      "alchemical": "Alchemical & Consumables"
+    },
+    "Sheet": {
+      "restock": "Restock",
+      "configure": "Configure Merchant"
+    },
+    "Config": {
+      "title": "Merchant Restocker",
+      "theme": "Theme",
+      "themeHint": "What the merchant sells.",
+      "budget": "Budget (gp)",
+      "budgetHint": "Total point pool. 1 point = 1 gp. Uncommon items cost 1.5x and rare items cost 3x.",
+      "selectTheme": "— Select a theme —",
+      "equipmentVendor": "Equipment vendor (guaranteed uncommon + 25% rare)",
+      "save": "Save"
+    },
+    "Notify": {
+      "configured": "Configured merchant: {name}",
+      "restocked": "Restocked {name} — {count} items ({breakdown})"
+    },
+    "Error": {
+      "notLoot": "Actor must be a Loot actor.",
+      "noTheme": "No theme configured for this merchant.",
+      "noBudget": "Merchant budget must be greater than zero.",
+      "emptyPool": "No items found for theme '{theme}'. Make sure the relevant compendiums are loaded."
+    }
+  }
+}

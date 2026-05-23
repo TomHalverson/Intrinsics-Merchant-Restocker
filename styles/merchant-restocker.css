@@ -1,0 +1,37 @@
+.intrinsics-restocker-toolbar {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.4rem 0.5rem;
+    margin: 0 0 0.5rem 0;
+    background: rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid var(--color-border-light-tertiary, rgba(0, 0, 0, 0.1));
+    flex: 0 0 auto;
+}
+
+.intrinsics-restocker-toolbar .intrinsics-restocker-btn {
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.6rem;
+    line-height: 1;
+    font-size: var(--font-size-13, 13px);
+    cursor: pointer;
+    border: 1px solid var(--color-border-dark-tertiary, #444);
+    background: var(--color-bg-btn, rgba(255, 255, 255, 0.05));
+    border-radius: 3px;
+}
+
+.intrinsics-restocker-toolbar .intrinsics-restocker-btn:hover {
+    background: var(--color-bg-btn-hover, rgba(255, 255, 255, 0.12));
+}
+
+.intrinsics-restocker-toolbar .intrinsics-restocker-btn i {
+    opacity: 0.85;
+}
+
+.intrinsics-merchant-restocker.config .form-group .hint small {
+    opacity: 0.75;
+}
