@@ -1,7 +1,7 @@
 {
   "id": "intrinsics-merchant-restocker",
   "title": "Intrinsic's Merchant Restocker",
-  "description": "Re-rolls PF2E/SF2E merchant (Loot actor) inventories using themed item pools and a per-merchant point budget. Equipment vendors are guaranteed at least one uncommon item with a 25% chance of a rare.",
+  "description": "Re-rolls PF2E/SF2E merchant (Loot actor) inventories using themed item pools and a per-merchant point budget. Equipment vendors may roll potency/striking/property runes and precious materials, gated by the merchant's budget.",
   "version": "1.0.0",
   "compatibility": {
     "minimum": "12",
@@ -17,7 +17,10 @@
       {
         "id": "sf2e",
         "type": "system",
-        "compatibility": {}
+        "compatibility": {
+          "minimum": "0.0.11",
+          "verified": "0.0.11"
+        }
       }
     ]
   },

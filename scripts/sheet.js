@@ -1,6 +1,6 @@
 import { MODULE_ID } from "./constants.js";
 import { MerchantConfigApp } from "./config-app.js";
-import { restock } from "./restocker.js";
+import { restock, previewRestock, undoLastRestock, hasUndoSnapshot, formatCurrency } from "./restocker.js";
 
 /**
  * Returns true if this actor is a PF2E/SF2E Loot actor with the Merchant subtype.
@@ -40,11 +40,30 @@ async function handleRestock(actor) {
       game.i18n.format("INTRINSICS_RESTOCKER.Notify.restocked", {
         name: actor.name,
         count: summary.itemCount,
-        breakdown: breakdown || "—"
+        breakdown: breakdown || "—",
+        spent: formatCurrency(summary.spent)
       })
     );
   } catch (err) {
     console.error(`${MODULE_ID} | restock failed`, err);
+    ui.notifications?.error(err.message ?? String(err));
+  }
+}
+
+async function handlePreview(actor) {
+  try {
+    await previewRestock(actor);
+  } catch (err) {
+    console.error(`${MODULE_ID} | preview failed`, err);
+    ui.notifications?.error(err.message ?? String(err));
+  }
+}
+
+async function handleUndo(actor) {
+  try {
+    await undoLastRestock(actor);
+  } catch (err) {
+    console.error(`${MODULE_ID} | undo failed`, err);
     ui.notifications?.error(err.message ?? String(err));
   }
 }
@@ -66,10 +85,24 @@ function injectButtons(app, root) {
   }));
 
   toolbar.appendChild(makeButton({
+    icon: "fa-eye",
+    label: game.i18n.localize("INTRINSICS_RESTOCKER.Sheet.preview"),
+    onClick: () => handlePreview(app.actor)
+  }));
+
+  toolbar.appendChild(makeButton({
     icon: "fa-dice-d20",
     label: game.i18n.localize("INTRINSICS_RESTOCKER.Sheet.restock"),
     onClick: () => handleRestock(app.actor)
   }));
+
+  if (hasUndoSnapshot(app.actor)) {
+    toolbar.appendChild(makeButton({
+      icon: "fa-rotate-left",
+      label: game.i18n.localize("INTRINSICS_RESTOCKER.Sheet.undo"),
+      onClick: () => handleUndo(app.actor)
+    }));
+  }
 
   // Mount near the top of the sheet body so it's visible without scrolling.
   const mountTarget =

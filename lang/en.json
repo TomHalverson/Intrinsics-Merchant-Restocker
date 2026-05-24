@@ -4,31 +4,50 @@
       "food": "Food & Provisions",
       "weapons": "Weapons",
       "armor": "Armor & Shields",
-      "alchemical": "Alchemical & Consumables"
+      "alchemical": "Alchemical & Consumables",
+      "magical": "Magic Items",
+      "scrolls": "Scrolls",
+      "tech": "Tech & Cybernetics",
+      "ammo": "Ammunition"
     },
     "Sheet": {
       "restock": "Restock",
+      "preview": "Preview",
+      "undo": "Undo Restock",
       "configure": "Configure Merchant"
     },
     "Config": {
       "title": "Merchant Restocker",
       "theme": "Theme",
       "themeHint": "What the merchant sells.",
-      "budget": "Budget (gp)",
-      "budgetHint": "Total point pool. 1 point = 1 gp. Uncommon items cost 1.5x and rare items cost 3x.",
+      "budget": "Budget",
+      "budgetHint": "Total spending budget in the active system's currency (gp for PF2E, credits for SF2E; UI display adapts automatically).",
       "selectTheme": "— Select a theme —",
-      "equipmentVendor": "Equipment vendor (guaranteed uncommon + 25% rare)",
+      "equipmentVendor": "Equipment vendor (50% uncommon + 25% rare, weapons/armor may roll runes)",
+      "compendium": "Item Source (override)",
+      "compendiumHint": "Optional. If set, items are pulled only from this compendium and theme filters are skipped. Useful for food merchants tied to a custom survival pack.",
+      "noCompendium": "— Use theme filters —",
+      "maxLevel": "Max Item Level",
+      "maxLevelHint": "Optional cap. Items above this level are excluded from this merchant's pool. Leave blank for no cap.",
+      "maxRarity": "Max Rarity",
+      "maxRarityHint": "Cap the rarity of items this merchant carries. Equipment-vendor uncommon/rare guarantees are skipped silently if the cap is lower.",
+      "rarityAny": "— No cap (default) —",
+      "rarityCommon": "Common only",
+      "rarityUncommon": "Common + Uncommon",
+      "rarityRare": "Up to Rare",
       "save": "Save"
     },
     "Notify": {
       "configured": "Configured merchant: {name}",
-      "restocked": "Restocked {name} — {count} items ({breakdown})"
+      "restocked": "Restocked {name} — {count} items, spent {spent} ({breakdown})",
+      "undone": "Restored previous inventory for {name}.",
+      "noUndo": "No previous inventory snapshot to restore."
     },
     "Error": {
       "notLoot": "Actor must be a Loot actor.",
       "noTheme": "No theme configured for this merchant.",
       "noBudget": "Merchant budget must be greater than zero.",
-      "emptyPool": "No items found for theme '{theme}'. Make sure the relevant compendiums are loaded."
+      "emptyPool": "No items found for theme '{theme}'. Make sure the relevant compendiums are loaded and that your level/rarity caps aren't too tight."
     }
   }
 }
